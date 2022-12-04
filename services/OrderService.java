@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class OrderService {
-    public static Order createOrder(int idCus) throws ParseException {
+    public Order createOrder(int idCus) throws ParseException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter order infor: ");
         System.out.print("+ number: ");
@@ -19,6 +19,7 @@ public class OrderService {
         int quantity = scanner.nextInt();
         System.out.print("+ price: ");
         int price = scanner.nextInt();
+        scanner.nextLine();
         Date date1;
             date1 = new SimpleDateFormat("dd/MM/yyyy").parse(date);
         Order order = new Order(number, date1, quantity, price, idCus);
